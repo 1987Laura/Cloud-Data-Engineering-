@@ -1,4 +1,4 @@
-from fibonacci import fibonacci
+from curs2.fibonacci import fibonacci
 import unittest
 import time
 
