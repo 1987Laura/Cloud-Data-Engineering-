@@ -12,4 +12,5 @@ driver.find_element(By.XPATH,cookie_button_xpath).click()
 
 valoare_euro = '/html/body/div[3]/div[1]/div/main/div[2]/div[1]/ul/li[1]/div[1]/div[1]'
 
-print(driver.find_element(By.XPATH,valoare_euro).text)
+with open('curs_bnr.txt','a') as fwriter:
+    fwriter.write(driver.find_element(By.XPATH,valoare_euro).text)
