@@ -1,0 +1,8 @@
+
+Pentru a activa contul trebuie sa apesi pe urmatorul link http://{{site}}/accounts/activate/{{activation_key}}/
+
+
+Hai sa incercam:
+
+http://{{ site }}{% url 'registration_activate' activation_key=activation_key %}
+

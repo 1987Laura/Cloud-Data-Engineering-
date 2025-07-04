@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h1>Aceasta este pagina de profile</h1>
+
+        {% if user.is_authenticated %}
+           <h2> Bine ai venit, {{user.username}} </h2> 
+             <form action="{% url 'logout'  %}" method="post">
+            {% csrf_token %}
+             <input type="submit" value="Logout">
+            </form>
+
+        {% else %}  
+            
+            
+            <h2> Nu esti logat, te rog sa te loghezi </h2>
+        
+        
+        {% endif %}
+
+        
+       
+
+
+</body>
+</html>
