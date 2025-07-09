@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: transparent;
+            border-style: none;
+            font-size: 32px;
+        }
+
+        .darktheme{
+            background-color: black;
+
+        }
+        .darktheme * {
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body class ="">
+    <h1>Acesta este un titlu</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae officiis expedita eaque tempora iure reprehenderit ex quo dignissimos repudiandae labore iste aperiam corporis, hic temporibus! Debitis natus sit nesciunt eos officia cum repellat quia facere maiores, ipsum, provident minima suscipit quisquam dolorum culpa! Soluta corporis velit officiis necessitatibus, quae voluptatibus.
+
+    </p> 
+
+    <div> hello</div>
+
+    <button onclick="schimba_tema()" id="tema"> 🌃 </button>
+    <script>
+            var buton_tema = document.getElementById("tema")
+            
+            function schimba_tema() {
+                document.body.className =  document.body.className == "darktheme" ? "" : "darktheme"
+                buton_tema.innerHTML = buton_tema.innerHTML == "🌞" ? "🌃" : "🌞"
+
+            }
+
+    </script>
+</body>
+</html>

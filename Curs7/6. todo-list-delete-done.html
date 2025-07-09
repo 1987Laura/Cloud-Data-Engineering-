@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <input type="text" name="task" id="">
+    <button onclick="addtask()">Adaugă</button>
+    <ol></ol>
+    
+    <script>
+        var task_input = document.getElementsByName('task')[0];
+        var ol = document.getElementsByTagName("ol")[0]
+        
+        function addtask(){
+            if (task_input.value.length <3) {
+                alert("Minim 3 caractere")
+                return
+            }
+
+            var new_li = document.createElement("li")
+            new_li.innerHTML= task_input.value
+
+            task_input.value =""
+
+            var check_button = document.createElement("button")
+            check_button.innerHTML = "✅"
+
+            check_button.onclick = function() {
+                new_li.style.textDecoration = new_li.style.textDecoration  == "line-through" ? "none" : "line-through";
+            }
+
+            var delete_button = document.createElement("button")
+            delete_button.innerHTML = "X"
+
+            delete_button.onclick = function() {
+                new_li.remove()
+            }
+
+            new_li.appendChild(check_button)
+            new_li.appendChild(delete_button)
+
+            ol.appendChild(new_li)
+           
+        }
+
+    </script>
+</body>
+</html>

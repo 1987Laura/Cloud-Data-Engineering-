@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO LIST</h1>
+    <input type="text" name="task" id="">
+    <button onclick="addtask()">Adaugă</button>
+    <ol></ol>
+
+    <script>
+        var task_input = document.getElementsByName("task")[0];
+        var ol = document.getElementsByTagName("ol")[0]
+        
+        function addtask(){
+            if (task_input.value.length <3) {
+                alert("Minim 3 caractere")
+                return
+            }
+
+            var new_li = document.createElement("li")
+            new_li.innerHTML= task_input.value
+            ol.appendChild(new_li)
+            task_input.value =""
+           
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table {
+            height: min(80vh, 80vw);
+            aspect-ratio: 1/1;
+            background-color: aqua;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+         }   
+
+         .patrat {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .patrat:nth-child(odd) {
+            background-color: gray;
+         }
+
+    </style>
+</head>
+<body>
+    <h1>X si O</h1>
+
+    <div id="table">
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+        <div class="patrat"></div>
+    </div>
+
+    <script>
+        var patrat_divs =document.getElementsByClassName("patrat")
+        var is_x = true;
+
+        function avem_castigator() {
+            combinatii_castigatoare = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+
+            for (let i = 0; i < combinatii_castigatoare.length; i++) {
+                const combinatie = combinatii_castigatoare[i];
+
+                if(patrat_divs[combinatie[0]].innerHTML == patrat_divs[combinatie[1]].innerHTML == patrat_divs[combinatie[2]].innerHTML == "X") {
+                    return "X"
+                }
+                
+               
+                }
+
+                return false;
+            }
+
+        
+
+        for (let i =0; i <patrat_divs.length; i++) {
+            const element = patrat_divs[i];
+            element.addEventListener("click", () => {
+                if (element.innerHTML !== ""){
+                    alert("casuta ocupata")
+                    return
+                }
+                element.innerHTML = is_x ? "X":"0"
+                is_x = !is_x
+                if avem_castigator() =="X"{
+                    alert("a castigat X")
+                } else if ()
+            })
+        }
+    </script>
+
+</body>
+</html>

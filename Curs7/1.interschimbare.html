@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p> 3 </p>
+    <p> 4 </p>
+
+    <script>
+    
+        var paragraph_list = document.getElementsByTagName("p")
+        var aux = paragraph_list[0].innerHTML
+        paragraph_list[0].innerHTML = paragraph_list[1].innerHTML
+        paragraph_list[1].innerHTML =  aux
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>duminica</div>
+    <div>luni</div>
+    <div>marti</div>
+    <div>miercuri</div>
+    <div>joi</div>
+    <div>vineri</div>
+    <div>sambata</div>
+
+    <button onclick="shifteaza()"> Shifteaza </button>
+
+    <script>
+
+        function shifteaza() {
+            var div_list = document.getElementsByTagName("div")
+            var aux = div_list[0].innerHTML
+
+            for (let i = 0; i < div_list.length -1; i++) {
+                const element = div_list[i];
+                console.log(element.innerHTML)
+                div_list[i].innerHTML = div_list[i+1].innerHTML
+            }
+            div_list[div_list.lenght - 1].innerHTML = aux
+        }
+    
+    </script>
+
+</body>
+</html>
