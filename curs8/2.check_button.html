@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>How do you want your project to be?</h1>
+        <div><input type="checkbox" name="bun" id="" onchange="select_property(this) " > <label for="bun">Good</label></div>
+
+        <div> <input type="checkbox" name="ieftin" id="" onchange="select_property(this) "> <label for="ieftin">Cheap</label></div>
+        <div><input type="checkbox" name="rapid" id="" onchange="select_property(this) "> <label for="rapid">Fast</label></div>
+
+        
+    </main>
+
+    <script>
+        var inputs = document.getElementsByTagName("input")
+        const MAX_SELECTED = 2
+
+        var total_selected = []
+
+        function select_property(selected_input) {
+            console.log("a fost selecta inputul:", selected_input)
+            console.log("starea este:", selected_input.checked)
+
+            if (selected_input.checked === true) {
+                total_selected.push(selected_input)
+            } else {
+                total_selected.pop(selected_input)
+            }
+
+            console.log("avem in total selectate:", total_selected.length)
+
+            if (total_selected.length > MAX_SELECTED) {
+                total_selected[0].checked = false
+                total_selected.splice(0,1)
+            }
+
+
+        }
+
+
+    </script>
+</body>
+</html>

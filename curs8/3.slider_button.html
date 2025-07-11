@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choose</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 20px;
+      color: #333;
+    }
+    .option {
+      margin: 15px 0;
+      font-size: 16px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+    }
+    .slider {
+      width: 50px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .slider div {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: left 0.2s;
+    }
+    .on {
+      background: #af4c99;
+    }
+    .on div {
+      left: 28px;
+    }
+    .text {
+      flex-grow: 1;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cum vrei să fie proiectul tău?</h1>
+  
+  <div class="option">
+    <div id="good" class="slider"><div></div></div>
+    <span class="text">Bun</span>
+  </div>
+  <div class="option">
+    <div id="cheap" class="slider"><div></div></div>
+    <span class="text">Ieftin</span>
+  </div>
+  <div class="option">
+    <div id="fast" class="slider"><div></div></div>
+    <span class="text">Rapid</span>
+  </div>
+
+  <script>
+    var selected = [];
+
+    function toggle(id) {
+      var slider = document.getElementById(id);
+      if (selected.includes(id)) {
+        selected = selected.filter(x => x != id);
+        slider.className = "slider";
+      } else {
+        if (selected.length == 2) {
+          var old = selected[0];
+          document.getElementById(old).className = "slider";
+          selected.shift();
+        }
+        selected.push(id);
+        slider.className = "slider on";
+      }
+    }
+
+    document.getElementById("good").onclick = function() { toggle("good"); };
+    document.getElementById("cheap").onclick = function() { toggle("cheap"); };
+    document.getElementById("fast").onclick = function() { toggle("fast"); };
+  </script>
+</body>
+</html>
